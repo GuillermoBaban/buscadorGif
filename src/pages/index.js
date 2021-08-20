@@ -11,6 +11,7 @@ import Navbar from "react-bootstrap/Navbar";
 export default function Home() {
   const [keyword, setKeyword] = useState("");
   const [path, pushLocation] = useLocation();
+  console.log(path);
 
   const handleSubmit = (e) => {
     e.preventDefault();

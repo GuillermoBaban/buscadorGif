@@ -21,6 +21,6 @@ export default function useGifs({ keyword }) {
       setGifs(gifs);
       setLogin(false);
     });
-  }, [keywordToUse, setGifs]);
+  }, [setGifs]);
   return { login, gifs };
 }
