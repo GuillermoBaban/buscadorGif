@@ -1,0 +1,22 @@
+.Category-title {
+  color: white;
+  font-weight: bold;
+}
+
+.Category-list {
+  list-style: none;
+  list-style-position: inside;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Category-link {
+  color: black;
+  font-size: 1em;
+  transition: color ease-in 0.1s;
+}
+
+.Category-link:hover {
+  color: red;
+}

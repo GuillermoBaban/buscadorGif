@@ -1,0 +1,37 @@
+:root {
+  --results-columns: 2;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.App-results {
+  column-count: var(--results-columns);
+  column-gap: 0.5em;
+  min-height: 100vh;
+}
+
+.App-category {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .App-main {
+    flex-direction: initial;
+  }
+
+  .App-category {
+    padding: 0 2em;
+    position: sticky;
+    top: 0;
+    width: 40%;
+  }
+}
