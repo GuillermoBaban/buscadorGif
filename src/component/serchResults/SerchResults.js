@@ -2,16 +2,21 @@ import React from "react";
 import Gif from "../printGifs/Gif";
 import useGifs from "../../hooks/useGifs";
 import Spinner from "react-bootstrap/Spinner";
+import Button from "react-bootstrap/Button";
 import logo from "../../img/logo.png";
 import Navbar from "react-bootstrap/Navbar";
-import "./listOfGif.css";
+import "./SearchResults.css";
 
 export default function ListOfGifs({ params }) {
   let keyword = "";
   params === undefined ? (keyword = "parrot") : (keyword = params.keyword);
-  const { login, gifs } = useGifs({ keyword }); //Custom Hook
+  const { loading, gifs, setPage } = useGifs({ keyword }); //Custom Hook
 
-  if (login) {
+  const handleNextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+  if (loading) {
     return <Spinner animation="border" variant="light" />;
   }
 
@@ -23,6 +28,7 @@ export default function ListOfGifs({ params }) {
       {gifs.map(({ id, title, url }) => (
         <Gif title={title} url={url} key={id} id={id} />
       ))}
+      <Button onClick={handleNextPage}>Get next page</Button>
     </div>
   );
 }

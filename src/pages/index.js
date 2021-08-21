@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "wouter";
 import Ultimabusqueda from "../component/Ultimabusqueda";
-import TrandingSearches from "../component/TrandingSearches";
+import Trending from "../component/TrendingSerches/index";
 import logo from "../img/logo.png";
 
 import Form from "react-bootstrap/Form";
@@ -39,12 +39,12 @@ export default function Home() {
       </Form>
       <h3>Ultima Busqueda</h3>
       <div className="App-main">
-        <div className="App-results text-center">
+        <div className="App-results">
           <Ultimabusqueda />
         </div>
         <div className="App-category">
           <h1>Tendencias</h1>
-          <TrandingSearches />
+          <Trending />
         </div>
       </div>
     </>

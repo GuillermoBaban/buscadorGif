@@ -1,7 +1,7 @@
-import { API_KEY } from "../services/settings";
-
-export default function GetGifs({ keywordToUse }) {
-  const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${keywordToUse})}&limit=20&rating=g&lang=en`;
+export default function GetGifs({ keywordToUse, page = 0 }) {
+  const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${
+    process.env.REACT_APP_UNSPLASH_KEY
+  }&q=${keywordToUse})}&limit=20&offset=${page * 20}&rating=g&lang=en`;
   return fetch(apiUrl)
     .then((res) => res.json())
     .then((response) => {

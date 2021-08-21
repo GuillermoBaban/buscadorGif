@@ -11,8 +11,8 @@ export default function Gif({
 }) {
   return (
     <div className="Gif">
-      <p>{title}</p>
-      <p>{type}</p>
+      <h4>{title}</h4>
+      <p className="mt-3">{type}</p>
       <p>{username}</p>
       <p>{trending_datetime}</p>
       <Link to={`/${id}`} className="Gif-link">

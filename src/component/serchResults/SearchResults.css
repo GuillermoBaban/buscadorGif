@@ -1,5 +1,9 @@
+:root {
+  --results-columns: 2;
+}
+
 .ListOfGifs {
-  column-count: 5;
+  column-count: var(--results-columns);
   column-gap: 0.5em;
   min-height: 100vh;
 }

@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import ListOfGifs from "./component/listOfGifs/ListOfGifs";
+import SerchResults from "./component/serchResults/SerchResults";
 import Detail from "./component/Detail";
 import Home from "./pages/index";
 import { Route } from "wouter";
@@ -12,7 +12,7 @@ function App() {
       <section className="App-container">
         <GifsContextProvider>
           <Route component={Home} path="/" />
-          <Route component={ListOfGifs} path="/gif/:keyword" />
+          <Route component={SerchResults} path="/gif/:keyword" />
           <Route component={Detail} path="/:id" />
         </GifsContextProvider>
       </section>
