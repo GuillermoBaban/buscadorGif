@@ -36,7 +36,7 @@ export default function useGifs({ keyword }) {
       setGifs((prevGifs) => prevGifs.concat(nextGifs));
       setLoadingNextPage(false);
     });
-  }, [page]);
+  }, [page, setGifs]);
 
   return { login, loadingNextPage, gifs, setPage };
 }
